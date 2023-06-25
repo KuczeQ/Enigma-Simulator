@@ -8,7 +8,6 @@ class EnigmaSimulator:
         self.initial_positions = []
         self.current_positions = []
 
-        # Wczytanie pliku konfiguracyjnego
         config_module = importlib.import_module(config_file.replace('.py', ''))
         self.rotors = config_module.rotors
         self.reflector = config_module.reflector
@@ -19,7 +18,7 @@ class EnigmaSimulator:
         encrypted_message = ''
         for char in message:
             if char.isalpha():
-                char = char.upper()  # Konwersja na dużą literę
+                char = char.upper() 
                 encrypted_char = self.process_char(char)
                 encrypted_message += encrypted_char
             else:
